@@ -20,8 +20,8 @@ https://github.com/Movansha/duck-dns-ip-updater/releases
 - Extract file named "DDIU Setup.exe"
 - Run the executable
 - Intall the application
-- Run the application
-- Double click on duck icon in the system tray
+- Run it
+- Double click on the duck icon in system tray
 - Enter your domain and token informations
 - Click "Apply" button
 #
