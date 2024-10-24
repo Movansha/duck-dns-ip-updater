@@ -1,2 +1,3 @@
-# duck-dns-ip-updater
-An IPv4 updater application for Duck DNS
+# Duck DNS IP Updater v1.0 (Windows)
+
+An IPv4 updater Windows application for Duck DNS
