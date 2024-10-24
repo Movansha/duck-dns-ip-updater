@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="images">
+    <file>resources/window.ico</file>
+    <file>resources/duck.png</file>
+    <file>resources/tray.ico</file>
+  </qresource>
+</RCC>
