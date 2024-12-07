@@ -1,4 +1,4 @@
-# Duck DNS IP Updater v1.0 (Windows)
+# ![Duck_icon](https://github.com/user-attachments/assets/c7a2ab4a-8b32-4b1c-98ac-9e20f736e4e1) Duck DNS IP Updater v1.0 (Windows)
 An IPv4 updater Windows application for Duck DNS
 
 This application developed with Python.
@@ -7,6 +7,7 @@ Basically "PySide6" and "requests" modules are used.
 It's an tray app and runs in the background. Updates automatically your Duck DNS domain IPv4 adress.
 It runs when the user logs in the PC.
 
+
 ## Download The Latest Release
 https://github.com/Movansha/duck-dns-ip-updater/releases
 
@@ -14,6 +15,7 @@ https://github.com/Movansha/duck-dns-ip-updater/releases
 ![ddiu-tray](https://github.com/user-attachments/assets/e96b2a8c-bbf8-41d3-8c1b-90c32e58d0be)
 
 ![ddiu](https://github.com/user-attachments/assets/09a311c8-cc36-4173-a27e-fecf3ad65a37)
+
 
 # Easy To Use (Step by Step)
 - Download the zip file -> https://github.com/Movansha/duck-dns-ip-updater/releases
