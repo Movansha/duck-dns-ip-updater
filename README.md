@@ -17,7 +17,7 @@ https://github.com/Movansha/duck-dns-ip-updater/releases
 ![ddiu](https://github.com/user-attachments/assets/09a311c8-cc36-4173-a27e-fecf3ad65a37)
 
 
-# Easy To Use (Step by Step)
+# Easy to Use (Step by Step)
 - Download the zip file -> https://github.com/Movansha/duck-dns-ip-updater/releases
 - Extract file named "DDIU Setup.exe"
 - Run the executable
