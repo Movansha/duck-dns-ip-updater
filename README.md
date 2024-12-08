@@ -14,7 +14,7 @@ https://github.com/Movansha/duck-dns-ip-updater/releases
 ## Screenshots
 ![ddiu-tray](https://github.com/user-attachments/assets/e96b2a8c-bbf8-41d3-8c1b-90c32e58d0be)
 
-![ddiu](https://github.com/user-attachments/assets/09a311c8-cc36-4173-a27e-fecf3ad65a37)
+![DDIU-SS-1](https://github.com/user-attachments/assets/e75a0642-4727-4cc1-93ac-cf4d34a8a2b3)
 
 
 # Easy to Use (Step by Step)
