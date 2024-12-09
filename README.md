@@ -1,4 +1,5 @@
 # ![Duck_icon](https://github.com/user-attachments/assets/c7a2ab4a-8b32-4b1c-98ac-9e20f736e4e1) Duck DNS IP Updater v1.0 (Windows)
+
 An IPv4 updater Windows application for Duck DNS
 
 This application developed with Python.
