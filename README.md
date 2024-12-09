@@ -11,6 +11,7 @@ It runs when the user logs in the PC.
 ## Download The Latest Release
 https://github.com/Movansha/duck-dns-ip-updater/releases
 
+
 ## Screenshots
 ![ddiu-tray](https://github.com/user-attachments/assets/e96b2a8c-bbf8-41d3-8c1b-90c32e58d0be)
 
@@ -19,11 +20,10 @@ https://github.com/Movansha/duck-dns-ip-updater/releases
 
 # Easy to Use (Step by Step)
 - Download the zip file -> https://github.com/Movansha/duck-dns-ip-updater/releases
-- Extract file named "DDIU Setup.exe"
-- Run the executable
-- Intall the application
-- Run it
-- Double click on the duck icon in system tray
+- Extract file named "DDIU_v1.0_Setup.exe" and install it.
+- Run the application
+- Double click on the duck icon in system tray or right click and click "Configurations" button.
 - Enter your domain and token informations
 - Click "Apply" button
+
 #
