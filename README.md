@@ -26,5 +26,3 @@ https://github.com/Movansha/duck-dns-ip-updater/releases
 - Double click on the duck icon in system tray or right click and click "Configurations" button.
 - Enter your domain and token informations
 - Click "Apply" button
-
-#
