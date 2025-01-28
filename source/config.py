@@ -1,11 +1,11 @@
 import os
 
-main_path = os.path.dirname(os.path.abspath(__file__))
-if "\\" in main_path:
-    main_path = main_path.replace("\\", "/") + "/"
+config_folder = os.environ.get("APPDATA") + "\\Movansha\\Duck DNS IP Updater"
 
+if not os.path.exists(config_folder):
+    os.mkdir(config_folder)
 
-config_file = main_path + "settings.cfg"
+config_file = config_folder + "\\settings.cfg"
 
 domains_line = 0
 token_line = 1
