@@ -1,14 +1,37 @@
 import requests, webbrowser
 
-def get_IP():
+
+def get_IPv4():
     try:
         return requests.get('https://api.ipify.org').text
     except:
         return "Unknown"
-
-def update_IP(domain, token):
+    
+def get_IPv6():
     try:
-        response = requests.get(f"https://www.duckdns.org/update/{domain}/{token}")
+        adress = requests.get('https://api64.ipify.org').text
+
+        if (adress != get_IPv4()):
+            return adress
+        return "Unknown"
+    
+    except:
+        return "Unknown"
+    
+
+
+def update_IP(domains, token):
+    try:
+        IPv4_adress = get_IPv4()
+        IPv6_adress = get_IPv6()
+
+        ip_adresses = "&ip=" + IPv4_adress
+
+        if IPv6_adress != "Unknown":
+            ip_adresses += "&ipv6=" + IPv6_adress
+
+        response = requests.get(f"https://www.duckdns.org/update?domains={domains}&token={token}{ip_adresses}")
+
         if response.text == "OK":
             return "Success"
         return "Failed"

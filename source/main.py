@@ -4,9 +4,9 @@ from PySide6.QtGui import QIcon
 from interface import Ui_MainWindow
 
 import resources_rc, sys
-import duck_dns, config, datetime, time
+import config, duck_dns, datetime, time
 
-config.setUp()
+config.load_cfg()
 
 
 class window_Class(QMainWindow):
@@ -14,22 +14,22 @@ class window_Class(QMainWindow):
         super(window_Class, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.connect_Buttons()
+        self.connect_buttons()
 
-    def import_Config(self):
-        self.ui.domain_LineEdit.setText(str(config.domain))
-        self.ui.token_LineEdit.setText(str(config.token))
+    def import_configs(self):
+        self.ui.domains_LineEdit.setText(config.domains)
+        self.ui.token_LineEdit.setText(config.token)
         self.ui.interval_LineEdit.setText(str(config.interval))
 
-    def apply_Configurations(self):
+    def apply_configs(self):
         self.hide()
-        config.enter_Domain(self.ui.domain_LineEdit.text())
-        config.enter_Token(self.ui.token_LineEdit.text())
-        config.enter_Interval(self.ui.interval_LineEdit.text())
-        tray_App.update_IP_Adress()
+        config.enter_domain(self.ui.domains_LineEdit.text())
+        config.enter_token(self.ui.token_LineEdit.text())
+        config.enter_interval(self.ui.interval_LineEdit.text())
+        tray_App.update_IP_adresses()
 
-    def connect_Buttons(self):
-        self.ui.apply_Button.clicked.connect(self.apply_Configurations)
+    def connect_buttons(self):
+        self.ui.apply_Button.clicked.connect(self.apply_configs)
         self.ui.web_Button.clicked.connect(lambda: duck_dns.open_Site())
 
     def closeEvent(self, event):
@@ -37,7 +37,7 @@ class window_Class(QMainWindow):
         event.ignore()
 
 
-class tray_App_Class(QSystemTrayIcon):
+class tray_app_Class(QSystemTrayIcon):
     def __init__(self, parent=None):
         super().__init__(parent)
 
@@ -46,47 +46,57 @@ class tray_App_Class(QSystemTrayIcon):
         self.setIcon(tray_icon)
 
         self.window = window_Class()
-        self.set_Up_Menu()
+        self.load_menu()
         
-        self.activated.connect(lambda event: self.open_Window() if event == QSystemTrayIcon.DoubleClick else None)
+        self.activated.connect(lambda event: self.open_window() if event == QSystemTrayIcon.DoubleClick else None)
 
-    def open_Window(self):
-        self.window.import_Config()
+
+    def open_window(self):
+        self.window.import_configs()
         self.window.show()
 
-    def update_Status(self, public_IP, response):
+    def update_status(self, response):
         hour = datetime.datetime.now().strftime("%H:%M")
-        self.setToolTip(f"IP adress: {public_IP}" "\n"
+        ipv4_adress = duck_dns.get_IPv4()
+        ipv6_adress = duck_dns.get_IPv6()
+
+        self.setToolTip(
+                        f"IPv4 adress: {ipv4_adress}" "\n"
+                        f"IPv6 adress: {ipv6_adress}" "\n"
                         f"Last update: {hour}" "\n"
                         f"Update status: {response}" "\n"
-                        f"Update interval: {config.interval} minute(s)")
+                        f"Update interval: {config.interval} minute(s)" "\n"
+                        )
 
-    def update_IP_Adress(self):
+    def update_IP_adresses(self):
         if config.token == "token":
             response = "Unknown"
         else:
-            response = duck_dns.update_IP(config.domain, config.token)
-        self.update_Status(duck_dns.get_IP(), response)
+            response = duck_dns.update_IP(config.domains, config.token)
 
-    def set_Up_Menu(self):
+        self.update_status(response)
+
+
+    def load_menu(self):
         self.menu = QMenu()
         self.menu.setTitle("Duck DNS IP Updater")
         self.setContextMenu(self.menu)
 
-        button_Open = self.menu.addAction("Configurations")
-        button_Open.triggered.connect(self.open_Window)
+        button_open = self.menu.addAction("Configurations")
+        button_open.triggered.connect(self.open_window)
 
-        button_Update = self.menu.addAction("Update IP now")
-        button_Update.triggered.connect(self.update_IP_Adress)
+        button_update = self.menu.addAction("Update IP adresses now")
+        button_update.triggered.connect(self.update_IP_adresses)
 
-        button_Exit = self.menu.addAction("Exit")
-        button_Exit.triggered.connect(self.close_App)
+        button_exit = self.menu.addAction("Exit")
+        button_exit.triggered.connect(self.close_App)
 
     def close_App(self):
         self.window.hide()
         updater.stop()
         updater.wait()
         QApplication.quit()
+
 
 class updater_Thread(QThread):
     def __init__(self):
@@ -102,14 +112,15 @@ class updater_Thread(QThread):
             time.sleep(2)
             self.counter += 2
             if self.counter >= (config.interval * 60):
-                tray_App.update_IP_Adress()
+                tray_App.update_IP_adresses()
                 self.counter = 0
 
+
 app = QApplication(sys.argv)
-tray_App = tray_App_Class()
+tray_App = tray_app_Class()
 updater = updater_Thread()
 
-tray_App.update_IP_Adress()
+tray_App.update_IP_adresses()
 updater.start()
 tray_App.show()
 

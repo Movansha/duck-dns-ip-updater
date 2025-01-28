@@ -1,95 +1,40 @@
 import os
 
-main_Path = os.path.dirname(os.path.abspath(__file__))
-if "\\" in main_Path:
-    main_Path = main_Path.replace("\\", "/") + "/"
+main_path = os.path.dirname(os.path.abspath(__file__))
+if "\\" in main_path:
+    main_path = main_path.replace("\\", "/") + "/"
 
-config_File = main_Path + "settings.cfg"
 
-domain_Line = 0
-token_Line = 1
-interval_Line = 2
+config_file = main_path + "settings.cfg"
 
-domain = str()
+domains_line = 0
+token_line = 1
+interval_line = 2
+
+domains = str()
 token = str()
 interval = int()
 
-def setUp():
-    global domain, token, interval
 
-    def prepare(file, line):
-        cfg_Lines = file.readlines()
-        cfg = str(cfg_Lines[line]).strip()
-        cfg = cfg.split("= ")[-1]
-        return cfg
+def enter_domain(string):
+    global domains
 
-    try:
-        with open(config_File, "r") as domain_Cfg:
-            domain = str(prepare(domain_Cfg, domain_Line))
+    if string == "":
+        string = "movansha"
 
-        with open(config_File, "r") as token_Cfg:
-            token = str(prepare(token_Cfg, token_Line))
+    domains = string.replace(" ", "")
+    write_value(domains_line, domains)
 
-        with open(config_File, "r") as interval_Cfg:
-            interval = int(prepare(interval_Cfg, interval_Line))
-
-        if "=" in domain or "=" in token:
-            raise ValueError
-
-    except:
-        with open(config_File, "w") as file:
-            file.write("domain = movansha" "\n"
-                       "token = token" "\n"
-                       "update_interval = 15" "\n")
-
-        domain = "movansha"
-        token = "token"
-        interval = 15
-
-def write_Value(line, text):
-    global domain, token, interval
-
-    try:
-        with open(config_File, 'r') as file:
-            cfg_Lines = file.readlines()
-            option = str(cfg_Lines[line]).strip()
-            option = option.split("=")[0] + ("=")
-
-            with open(config_File, "w") as file:
-                cfg_Lines[line] = f"{option} {text}\n"
-                file.writelines(cfg_Lines)
-
-    except:
-        with open(config_File, "w") as file:
-            file.write("domain = movansha" "\n"
-                       "token = token" "\n"
-                       "update_interval = 15" "\n")
-
-        domain = "movansha"
-        token = "token"
-        interval = 15
-
-def enter_Domain(text):
-    global domain
-
-    if text == "":
-        text = "movansha"
-
-    text = text.replace(" ", "")
-    domain = str(text)
-    write_Value(domain_Line, str(text))
-
-def enter_Token(text):
+def enter_token(string):
     global token
 
-    if text == "":
-        text = "token"
+    if string == "":
+        string = "token"
 
-    text = text.replace(" ", "")
-    token = str(text)
-    write_Value(token_Line, str(text))
+    token = string.replace(" ", "")
+    write_value(token_line, token)
 
-def enter_Interval(value):
+def enter_interval(value):
     global interval
 
     try:
@@ -97,4 +42,64 @@ def enter_Interval(value):
     except:
         interval = int(15)
 
-    write_Value(interval_Line, str(interval))
+    write_value(interval_line, str(interval))
+
+
+def load_cfg():
+    global domains, token, interval
+
+    def prepare(file, line):
+        cfg_lines = file.readlines()
+
+        cfg = str(cfg_lines[line]).strip()
+        cfg = cfg.split("= ")[-1]
+
+        return cfg
+
+    try:
+        with open(config_file, "r") as cfg_domains:
+            domains = str(prepare(cfg_domains, domains_line))
+
+        with open(config_file, "r") as cfg_token:
+            token = str(prepare(cfg_token, token_line))
+
+        with open(config_file, "r") as cfg_interval:
+            interval = int(prepare(cfg_interval, interval_line))
+
+        if "=" in domains or "=" in token:
+            raise ValueError
+
+    except:
+        with open(config_file, "w") as file:
+            file.write("domains = movansha" "\n"
+                       "token = token" "\n"
+                       "update_interval = 15" "\n")
+
+        domains = "movansha"
+        token = "token"
+        interval = 15
+
+
+def write_value(line, text):
+    global domains, token, interval
+
+    try:
+        with open(config_file, 'r') as file:
+            cfg_lines = file.readlines()
+
+            option = str(cfg_lines[line]).strip()
+            option = option.split("=")[0] + ("=")
+
+            with open(config_file, "w") as file:
+                cfg_lines[line] = f"{option} {text}\n"
+                file.writelines(cfg_lines)
+
+    except:
+        with open(config_file, "w") as file:
+            file.write("domains = movansha" "\n"
+                       "token = token" "\n"
+                       "update_interval = 15" "\n")
+
+        domains = "movansha"
+        token = "token"
+        interval = 15
