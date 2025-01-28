@@ -2,11 +2,7 @@ import os
 
 
 config_folder = os.getenv("APPDATA") + "\\Movansha\\Duck DNS IP Updater"
-
-os.makedirs(config_folder, exist_ok=True)
-
 config_file = config_folder + "\\settings.cfg"
-
 
 domains_line = 0
 token_line = 1
@@ -48,6 +44,7 @@ def enter_interval(value):
 
 def load_cfg():
     global domains, token, interval, config_file
+    os.makedirs(config_folder, exist_ok=True)
 
     def prepare(file, line):
         cfg_lines = file.readlines()
@@ -83,6 +80,7 @@ def load_cfg():
 
 def write_value(line, text):
     global domains, token, interval
+    os.makedirs(config_folder, exist_ok=True)
 
     try:
         with open(config_file, 'r') as file:
