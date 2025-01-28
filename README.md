@@ -1,28 +1,29 @@
-# ![Duck_icon](https://github.com/user-attachments/assets/c7a2ab4a-8b32-4b1c-98ac-9e20f736e4e1) Duck DNS IP Updater v1.0 (Windows)
+# ![Duck_icon](https://github.com/user-attachments/assets/c7a2ab4a-8b32-4b1c-98ac-9e20f736e4e1) Duck DNS IP Updater v1.1
 
-An IPv4 updater Windows application for Duck DNS
+IPv4 and IPv6 updater client for Duck DNS.
 
 This application developed with Python.
 Basically "PySide6" and "requests" modules are used.
 
-It's an tray app and runs in the background. Updates automatically your Duck DNS domain IPv4 adress.
+It's an tray app and runs in the background. Updates automatically ip adresses of your domain(s).
+If you have IPv6 adress, it will also be updated automatically with IPv4.
+
 It runs when the user logs in the PC.
 
 
-## Download The Latest Release
-https://github.com/Movansha/duck-dns-ip-updater/releases
+### [Download The Latest Release](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
 
 
 ## Screenshots
-![ddiu-tray](https://github.com/user-attachments/assets/e96b2a8c-bbf8-41d3-8c1b-90c32e58d0be)
+![ddiu-tray](https://github.com/user-attachments/assets/25507619-842c-40a3-bd4b-51e7c8759b24)
 
-![DDIU-SS-1](https://github.com/user-attachments/assets/e75a0642-4727-4cc1-93ac-cf4d34a8a2b3)
+![ddiu-window](https://github.com/user-attachments/assets/637ebd9e-18d0-4372-95d9-1ce4d6186ca5)
 
 
 # Easy to Use (Step by Step)
-- Download the zip file -> https://github.com/Movansha/duck-dns-ip-updater/releases
-- Extract file named "DDIU_v1.0_Setup.exe" and install it.
+- Download the zip file -> [Latest Release](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
+- Extract file named "DDIU_v1.1_Setup.exe" and install it.
 - Run the application
 - Double click on the duck icon in system tray or right click and click "Configurations" button.
-- Enter your domain and token informations
+- Enter your domain(s) and token informations
 - Click "Apply" button
