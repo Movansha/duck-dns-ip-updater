@@ -1,4 +1,4 @@
-# ![Duck_icon](https://github.com/user-attachments/assets/c7a2ab4a-8b32-4b1c-98ac-9e20f736e4e1) Duck DNS IP Updater v1.1
+# ![Duck_icon](https://github.com/user-attachments/assets/c7a2ab4a-8b32-4b1c-98ac-9e20f736e4e1) Duck DNS IP Updater
 
 IPv4 and IPv6 updater client for Duck DNS.
 
@@ -21,8 +21,8 @@ It runs when the user logs in the PC.
 
 
 # Easy to Use (Step by Step)
-- Download the zip file -> [Latest Release](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
-- Extract file named "DDIU_v1.1_Setup.exe" and install it.
+- Download the app -> [Latest Release](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
+- Install it.
 - Run the application
 - Double click on the duck icon in system tray or right click and click "Configurations" button.
 - Enter your domain(s) and token informations
