@@ -15,9 +15,10 @@ It runs when the user logs in the PC.
 
 
 ## Screenshots
-![ddiu-tray](https://github.com/user-attachments/assets/25507619-842c-40a3-bd4b-51e7c8759b24)
-
 ![ddiu-window](https://github.com/user-attachments/assets/637ebd9e-18d0-4372-95d9-1ce4d6186ca5)
+
+![ddiu-tray](https://github.com/user-attachments/assets/38dd425d-fe0b-4911-ace6-6121ec924f56)
+
 
 
 # Easy to Use (Step by Step)
