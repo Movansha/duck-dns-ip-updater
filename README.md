@@ -14,7 +14,7 @@ It runs when the user logs in the PC.
 ### [Download The Latest Release](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
 
 
-## Screenshots
+# Screenshots
 ![ddiu-window](https://github.com/user-attachments/assets/637ebd9e-18d0-4372-95d9-1ce4d6186ca5)
 
 ![ddiu-tray](https://github.com/user-attachments/assets/38dd425d-fe0b-4911-ace6-6121ec924f56)
