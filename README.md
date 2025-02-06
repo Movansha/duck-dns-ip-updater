@@ -2,7 +2,7 @@
 
 IPv4 and IPv6 updater client for Duck DNS.
 
-This application developed with Python.
+This application developed with Python (3.11.9).
 Basically "PySide6" and "requests" modules are used.
 
 It's an tray app and runs in the background. Updates automatically ip adresses of your domain(s).
