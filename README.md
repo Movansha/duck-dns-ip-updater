@@ -1,6 +1,6 @@
 # ![Duck_icon](https://github.com/user-attachments/assets/c7a2ab4a-8b32-4b1c-98ac-9e20f736e4e1) Duck DNS IP Updater
 
-IPv4 and IPv6 updater client for Duck DNS.
+IPv4 and IPv6 updater client for Duck DNS
 
 This application developed with Python 3.11.9
 
