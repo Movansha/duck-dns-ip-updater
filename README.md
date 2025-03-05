@@ -6,26 +6,26 @@ This application developed with Python 3.11.9
 
 Basically "PySide6" and "requests" modules are used.
 
-It's an tray app and runs in the background. Updates automatically ip adresses of your domain(s).
-If you have IPv6 adress, it will also be updated automatically with IPv4.
+It's an tray app and runs in the background. Automatically updates the ip adresses of your domain(s) in Duck DNS.
+If you have IPv6 adress, it will also be updated automatically together with IPv4.
 
-It runs when the user logs in the PC.
+It runs when the user logs in to the system.
 
 
-### [Download The Latest Release](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
+### [Download For Windows & Linux](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
 
 
 # Screenshots
-![ddiu-window](https://github.com/user-attachments/assets/637ebd9e-18d0-4372-95d9-1ce4d6186ca5)
 
-![ddiu-tray](https://github.com/user-attachments/assets/38dd425d-fe0b-4911-ace6-6121ec924f56)
+![01](https://github.com/user-attachments/assets/a8146297-252e-4467-8c75-118a66d0ab73)
 
+![02](https://github.com/user-attachments/assets/9bce48f8-f56e-4a99-9e91-8bc9ab240539)
 
 
 # Easy to Use (Step by Step)
-- Download the app -> [Latest Release](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
+- Download the app -> [For Windows & Linux](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
 - Install it.
 - Run the application
-- Double click on the duck icon in system tray or right click and click "Configurations" button.
+- Click on the duck icon in system tray or right click, then click on "Configurations" button.
 - Enter your domain(s) and token informations
 - Click "Apply" button
