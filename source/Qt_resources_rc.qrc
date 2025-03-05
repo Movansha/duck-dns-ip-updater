@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>resources/32x.ico</file>
+    <file>resources/256x.ico</file>
+    <file>resources/duck-dns.png</file>
+  </qresource>
+</RCC>

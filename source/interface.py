@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         MainWindow.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         MainWindow.setWindowTitle(u"Duck DNS IP Updater")
         icon = QIcon()
-        icon.addFile(u":/images/resources/window.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/icons/resources/256x.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet(u"background: #f9f9f9; font: 11pt \"Nirmala UI\"; color: #000000;")
         MainWindow.setIconSize(QSize(32, 32))
@@ -123,7 +123,7 @@ class Ui_MainWindow(object):
         self.web_Button.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.web_Button.setStyleSheet(u"background: #f7f7f7; border: 0;")
         icon1 = QIcon()
-        icon1.addFile(u":/images/resources/duck.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/icons/resources/duck-dns.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.web_Button.setIcon(icon1)
         self.web_Button.setIconSize(QSize(45, 45))
 

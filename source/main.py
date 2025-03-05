@@ -42,13 +42,13 @@ class tray_app_Class(QSystemTrayIcon):
         super().__init__(parent)
 
         tray_icon = QIcon()
-        tray_icon.addFile(u":/images/resources/tray.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        tray_icon.addFile(u":/icons/resources/32x.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.setIcon(tray_icon)
 
         self.window = window_Class()
         self.load_menu()
         
-        self.activated.connect(lambda event: self.open_window() if event == QSystemTrayIcon.DoubleClick else None)
+        self.activated.connect(lambda event: self.open_window() if event == QSystemTrayIcon.Trigger else None)
 
 
     def open_window(self):
@@ -65,7 +65,7 @@ class tray_app_Class(QSystemTrayIcon):
                         f"IPv6 adress: {ipv6_adress}" "\n"
                         f"Last update: {hour}" "\n"
                         f"Update status: {response}" "\n"
-                        f"Update interval: {config.interval} minute(s)" "\n"
+                        f"Update interval: {config.interval} minute(s)"
                         )
 
     def update_IP_adresses(self):

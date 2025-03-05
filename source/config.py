@@ -1,8 +1,15 @@
 import os
+import platform
 
+os_name = platform.system()
 
-config_folder = os.getenv("APPDATA") + "\\Movansha\\Duck DNS IP Updater"
-config_file = config_folder + "\\settings.cfg"
+if os_name == "Linux":
+    config_folder = os.path.expanduser("~") + "/.config/Movansha/Duck-DNS-IP-Updater"
+    config_file = config_folder + "/settings.cfg"
+
+else:
+    config_folder = os.getenv("APPDATA") + "\\Movansha\\Duck DNS IP Updater"
+    config_file = config_folder + "\\settings.cfg"
 
 domains_line = 0
 token_line = 1
