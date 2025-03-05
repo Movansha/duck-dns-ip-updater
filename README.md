@@ -7,7 +7,7 @@ This application developed with Python 3.11.9
 Basically "PySide6" and "requests" modules are used.
 
 It's an tray app and runs in the background. Automatically updates the ip adresses of your domain(s) in Duck DNS.
-If you have IPv6 adress, it will also be updated automatically together with IPv4.
+If you have IPv6 adress, it will also be updated together with IPv4.
 
 It runs when the user logs in to the system.
 
