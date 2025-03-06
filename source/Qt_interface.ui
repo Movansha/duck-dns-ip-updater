@@ -24,7 +24,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="Qt_resources_rc.qrc">
-    <normaloff>:/icons/resources/256x.ico</normaloff>:/icons/resources/256x.ico</iconset>
+    <normaloff>:/icons/resources/ddiu.ico</normaloff>:/icons/resources/ddiu.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background: #f9f9f9; font: 11pt &quot;Nirmala UI&quot;; color: #000000;</string>

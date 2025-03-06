@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         MainWindow.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         MainWindow.setWindowTitle(u"Duck DNS IP Updater")
         icon = QIcon()
-        icon.addFile(u":/icons/resources/256x.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/icons/resources/ddiu.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet(u"background: #f9f9f9; font: 11pt \"Nirmala UI\"; color: #000000;")
         MainWindow.setIconSize(QSize(32, 32))

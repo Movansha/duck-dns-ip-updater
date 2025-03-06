@@ -1,7 +1,8 @@
 <RCC>
   <qresource prefix="icons">
-    <file>resources/32x.ico</file>
-    <file>resources/256x.ico</file>
+    <file>resources/tray_failed.ico</file>
+    <file>resources/tray_success.ico</file>
     <file>resources/duck-dns.png</file>
+    <file>resources/ddiu.ico</file>
   </qresource>
 </RCC>

@@ -1,12 +1,13 @@
 from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QMainWindow
-from PySide6.QtCore import QSize, QThread
+from PySide6.QtCore import QThread, QSize
 from PySide6.QtGui import QIcon
 from interface import Ui_MainWindow
 
 import resources_rc, sys
+
 import config, duck_dns, datetime, time
 
-config.load_cfg()
+config.load_config()
 
 
 class window_Class(QMainWindow):
@@ -40,16 +41,16 @@ class window_Class(QMainWindow):
 class tray_app_Class(QSystemTrayIcon):
     def __init__(self, parent=None):
         super().__init__(parent)
-
-        tray_icon = QIcon()
-        tray_icon.addFile(u":/icons/resources/32x.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.setIcon(tray_icon)
-
         self.window = window_Class()
-        self.load_menu()
-        
-        self.activated.connect(lambda event: self.open_window() if event == QSystemTrayIcon.Trigger else None)
 
+        self.deactive_icon = QIcon()
+        self.deactive_icon.addFile(u":/icons/resources/tray_failed.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+
+        self.active_icon = QIcon()
+        self.active_icon.addFile(u":/icons/resources/tray_success.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+
+        self.load_menu()
+        self.activated.connect(lambda event: self.open_window() if event == QSystemTrayIcon.DoubleClick else None)
 
     def open_window(self):
         self.window.import_configs()
@@ -69,10 +70,8 @@ class tray_app_Class(QSystemTrayIcon):
                         )
 
     def update_IP_adresses(self):
-        if config.token == "token":
-            response = "Unknown"
-        else:
-            response = duck_dns.update_IP(config.domains, config.token)
+        response = duck_dns.update_IP(config.domains, config.token)
+        self.setIcon(self.active_icon if response == "Success" else self.deactive_icon)
 
         self.update_status(response)
 
@@ -85,15 +84,15 @@ class tray_app_Class(QSystemTrayIcon):
         button_open = self.menu.addAction("Configurations")
         button_open.triggered.connect(self.open_window)
 
-        button_update = self.menu.addAction("Update IP adresses now")
+        button_update = self.menu.addAction("Update adresses now")
         button_update.triggered.connect(self.update_IP_adresses)
 
         button_exit = self.menu.addAction("Exit")
         button_exit.triggered.connect(self.close_App)
 
     def close_App(self):
-        self.window.hide()
-        updater.stop()
+        self.window.destroy()
+        updater.close()
         updater.wait()
         QApplication.quit()
 
@@ -101,10 +100,11 @@ class tray_app_Class(QSystemTrayIcon):
 class updater_Thread(QThread):
     def __init__(self):
         super().__init__()
+
         self.program = True
         self.counter = 0
 
-    def stop(self):
+    def close(self):
         self.program = False
 
     def run(self):
@@ -117,11 +117,13 @@ class updater_Thread(QThread):
 
 
 app = QApplication(sys.argv)
+
 tray_App = tray_app_Class()
 updater = updater_Thread()
 
 tray_App.update_IP_adresses()
-updater.start()
 tray_App.show()
+
+updater.start()
 
 sys.exit(app.exec())
