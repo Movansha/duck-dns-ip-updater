@@ -3,7 +3,7 @@ import os
 
 os_name = system()
 
-if os_name == "Linux":
+if os_name == "Linux" or os_name == "Darwin":
     config_folder = str(os.path.expanduser("~")) + "/.config/Movansha/duck-dns-ip-updater"
     config_file = config_folder + "/config"
 
