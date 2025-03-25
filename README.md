@@ -10,10 +10,11 @@ It's an tray app and runs in the background. Automatically updates the ip adress
 If you have IPv6 adress, it will also be updated together with IPv4.
 
 It runs when the user logs in to system. (for Windows & Linux)
-You may add it as a startup item in macOS. 
+
+You may add it as a startup item in settings for macOS. 
 
 
-### [Download for Windows & macOS & Linux](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
+### [Download for Windows & Linux & macOS](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
 
 
 # Screenshots
@@ -24,7 +25,7 @@ You may add it as a startup item in macOS.
 
 
 # Easy to Use (Step by Step)
-- Download the app -> [for Windows & macOS & Linux](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
+- Download the app -> [for Windows & Linux & macOS](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
 - Install it.
 - Run the application
 - Click on the duck icon in system tray or right click, then click on "Configurations" button.
