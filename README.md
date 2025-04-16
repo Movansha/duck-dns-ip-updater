@@ -10,7 +10,7 @@ If you have IPv6 adress, it will also be updated together with IPv4.
 It runs when the user logs in to system (for Windows & Linux)
 
 > #### Used in this project:
-> - Language: Python 3.11.9
+> - Language: Python (3.11.9)
 > - Module: PySide6
 > - Module: requests
 
