@@ -11,7 +11,7 @@ It runs when the user logs in to system (for Windows & Linux)
 
 > #### Used in this project:
 > - Language: Python (3.11.9)
-> - Module: PySide6
+> - Package: PySide6
 > - Module: requests
 
 > [!Note]
