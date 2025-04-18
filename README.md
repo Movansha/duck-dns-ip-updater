@@ -30,8 +30,8 @@ It runs when the user logs in to system (for Windows & Linux)
 #
 > ### Easy to Use (Step by Step)
 > - Download the app ---> [for Windows & Linux & macOS](https://github.com/Movansha/duck-dns-ip-updater/releases/latest)
-> - Install it.
+> - Install it
 > - Run the application
-> - Click on the duck icon in system tray or right click, then click on "Configurations" button.
+> - Click on the duck icon in system tray or right click, then click on "Configurations" button
 > - Enter your domain(s) and token informations
 > - Click "Apply" button
