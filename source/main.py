@@ -6,6 +6,7 @@ from interface import Ui_MainWindow
 import resources_rc, sys
 
 import config, duck_dns, datetime, time
+from config import os_name
 
 config.load_config()
 
@@ -117,6 +118,8 @@ class updater_Thread(QThread):
 
 
 app = QApplication(sys.argv)
+if os_name == "Windows":
+    app.setStyle("WindowsVista")
 
 tray_App = tray_app_Class()
 updater = updater_Thread()
