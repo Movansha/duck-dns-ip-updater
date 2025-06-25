@@ -16,7 +16,7 @@ It runs when the user logs in to the system.
 
 
 # Screenshots
-![01](https://github.com/user-attachments/assets/a8146297-252e-4467-8c75-118a66d0ab73)
+![01](https://github.com/user-attachments/assets/5be843e2-83a8-4a94-a65c-6efb4efeb9bf)
 
 ![02](https://github.com/user-attachments/assets/9bce48f8-f56e-4a99-9e91-8bc9ab240539)
 
