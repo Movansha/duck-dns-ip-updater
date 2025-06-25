@@ -66,8 +66,7 @@ class tray_app_Class(QSystemTrayIcon):
                         f"IPv4 adress: {ipv4_adress}" "\n"
                         f"IPv6 adress: {ipv6_adress}" "\n"
                         f"Last update: {hour}" "\n"
-                        f"Update status: {response}" "\n"
-                        f"Update interval: {config.interval} minute(s)"
+                        f"Update status: {response}"
                         )
 
     def update_IP_adresses(self):
